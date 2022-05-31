@@ -16,7 +16,6 @@ import sys
 CMD_VAR_RE = re.compile(r'^\s*cmd_(\S+)\s*:=\s*(.+)\s*$', re.MULTILINE)
 SOURCE_VAR_RE = re.compile(r'^\s*source_(\S+)\s*:=\s*(.+)\s*$', re.MULTILINE)
 
-
 def print_progress_bar(progress):
     progress_bar = '[' + '|' * int(50 * progress) + '-' * int(50 * (1.0 - progress)) + ']'
     print('\r', progress_bar, "{0:.1%}".format(progress), end='\r', file=sys.stderr)
@@ -49,7 +48,7 @@ def gen_compile_commands(cmd_file_search_path, out_dir):
     for search_path in cmd_file_search_path:
         if (os.path.isdir(search_path)):
             for cur_dir, subdir, files in os.walk(search_path):
-                cmd_files.extend(os.path.join(cur_dir, cmdfile_name) for cmdfile_name in fnmatch.filter(files, '*.o.cmd'))
+                cmd_files.extend(os.path.join(cur_dir, cmdfile_name) for cmdfile_name in (fnmatch.filter(files, '*.o.cmd') + fnmatch.filter(files, '*.build.cmd')))
         else:
             cmd_files.extend(search_path)
 

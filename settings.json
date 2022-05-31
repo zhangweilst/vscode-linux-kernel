@@ -1,6 +1,5 @@
 {
     "files.exclude": {
-        "**/.*.*.cmd": true,
         "**/.*.d": true,
         "**/.*.S": true
     },
@@ -11,6 +10,16 @@
         "editor.rulers": [80,100]
     },
     "files.associations": {
-        "*.h": "c"
-    }
+        "*.h": "c",
+        "cstdio": "c",
+        "typeinfo": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled",
+    "editor.insertSpaces": false,
+    "restructuredtext.pythonRecommendation.disabled": true,
+    "editor.tabSize": 8,
+    "C_Cpp.intelliSenseCacheSize": 51200,
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "C_Cpp.intelliSenseCachePath": "/data1/vscode-cache",
+    "editor.detectIndentation": false
 }
