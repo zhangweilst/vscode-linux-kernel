@@ -1,7 +1,9 @@
 {
     "files.exclude": {
         "**/.*.d": true,
-        "**/.*.S": true
+        "**/.*.S": true,
+	"**/*.*.cmd": true,
+        "**/*.o": true
     },
     "[c]": {
         "editor.detectIndentation": false,
